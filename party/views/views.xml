@@ -11,6 +11,7 @@
           <field name="Country"/>
           <field name="releaseDate"/>
           <field name="Duration"/>
+          <field name="Genders"/>
           <field name="Language"/>
         </tree>
       </field>
@@ -37,6 +38,11 @@
      <record model="ir.actions.act_window" id="party.action_screenwriter_window">
       <field name="name">party screenwriter window</field>
       <field name="res_model">party.screenwriter</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="party.action_gender_window">
+      <field name="name">party gender window</field>
+      <field name="res_model">party.gender</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -70,5 +76,7 @@
               action="party.action_producer_window"/>
     <menuitem name="Screenwriters" id="party.menu_screenwriter_list" parent="party.menu_1"
               action="party.action_screenwriter_window"/>
+    <menuitem name="Genders" id="party.menu_gender_list" parent="party.menu_1"
+              action="party.action_gender_window"/>
   </data>
 </odoo>

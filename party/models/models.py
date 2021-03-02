@@ -26,6 +26,14 @@ class screenwriter(models.Model):
     films=fields.Many2many(string="Films",comodel_name="party.film",relation='screenwriters_films',
                            column1='screenwriter_id',column2='film_id')
 
+class gender(models.Model):
+    _name = 'party.gender'
+    _description = 'party.gender'
+
+    name = fields.Char()
+    films=fields.Many2many(string="Films",comodel_name="party.film",relation='genders_films',
+                           column1='gender_id',column2='film_id')
+
 class film(models.Model):
     _name = 'party.film'
     _description = 'party.film'
@@ -39,6 +47,8 @@ class film(models.Model):
                                 column1='film_id', column2='screenwriter_id')
     Country = fields.Selection([('Spain','Spain'),('EE.UU','EE.UU')])
     releaseDate= fields.Date(string="Release Date")
+    Genders=fields.Many2many(comodel_name="party.gender", relation='genders_films',
+                                column1='film_id', column2='gender_id')
     Duration=fields.Integer()
     Language=fields.Selection([('Spanish','Spanish'),('English','English')])
 
