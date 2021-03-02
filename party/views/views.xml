@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="party.film_list">
+      <field name="name">party.film list</field>
+      <field name="model">party.film</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Title"/>
+          <field name="Country"/>
+          <field name="releaseDate"/>
+          <field name="Duration"/>
+          <field name="Language"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="party.action_film_window">
+      <field name="name">party film window</field>
+      <field name="res_model">party.film</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="party.action_director_window">
+      <field name="name">party director window</field>
+      <field name="res_model">party.director</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+     <record model="ir.actions.act_window" id="party.action_producer_window">
+      <field name="name">party producer window</field>
+      <field name="res_model">party.producer</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+     <record model="ir.actions.act_window" id="party.action_screenwriter_window">
+      <field name="name">party screenwriter window</field>
+      <field name="res_model">party.screenwriter</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="party.action_server">
+      <field name="name">party server</field>
+      <field name="model_id" ref="model_party_party"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <menuitem name="Party" id="party.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Management" id="party.menu_1" parent="party.menu_root"/>
+    <!-- actions -->
+    <menuitem name="Films" id="party.menu_film_list" parent="party.menu_1"
+              action="party.action_film_window"/>
+    <menuitem name="Directors" id="party.menu_director_list" parent="party.menu_1"
+              action="party.action_director_window"/>
+    <menuitem name="Producers" id="party.menu_producer_list" parent="party.menu_1"
+              action="party.action_producer_window"/>
+    <menuitem name="Screenwriters" id="party.menu_screenwriter_list" parent="party.menu_1"
+              action="party.action_screenwriter_window"/>
+  </data>
+</odoo>

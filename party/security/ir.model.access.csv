@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_party_film,party.film,model_party_film,base.group_user,1,1,1,1
+access_party_director,party.director,model_party_director,base.group_user,1,1,1,1
+access_party_producer,party.producer,model_party_producer,base.group_user,1,1,1,1
+access_party_screenwriter,party.screenwriter,model_party_screenwriter,base.group_user,1,1,1,1
