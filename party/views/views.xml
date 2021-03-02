@@ -17,31 +17,50 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="party.musical_theme_list">
+      <field name="name">party.musical_theme list</field>
+      <field name="model">party.musical_theme</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Title"/>
+          <field name="Album"/>
+          <field name="releaseDate"/>
+          <field name="Format"/>
+          <field name="Duration"/>
+        </tree>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="party.action_film_window">
-      <field name="name">party film window</field>
+      <field name="name">Films</field>
       <field name="res_model">party.film</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="party.action_musical_theme_window">
+      <field name="name">Musical themes</field>
+      <field name="res_model">party.musical_theme</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="party.action_director_window">
-      <field name="name">party director window</field>
+      <field name="name">Directors</field>
       <field name="res_model">party.director</field>
       <field name="view_mode">tree,form</field>
     </record>
      <record model="ir.actions.act_window" id="party.action_producer_window">
-      <field name="name">party producer window</field>
+      <field name="name">Producers</field>
       <field name="res_model">party.producer</field>
       <field name="view_mode">tree,form</field>
     </record>
      <record model="ir.actions.act_window" id="party.action_screenwriter_window">
-      <field name="name">party screenwriter window</field>
+      <field name="name">Screenwriters</field>
       <field name="res_model">party.screenwriter</field>
       <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="party.action_gender_window">
-      <field name="name">party gender window</field>
+      <field name="name">Genders</field>
       <field name="res_model">party.gender</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -70,6 +89,8 @@
     <!-- actions -->
     <menuitem name="Films" id="party.menu_film_list" parent="party.menu_1"
               action="party.action_film_window"/>
+    <menuitem name="Musical themes" id="party.menu_musical_theme_list" parent="party.menu_1"
+              action="party.action_musical_theme_window"/>
     <menuitem name="Directors" id="party.menu_director_list" parent="party.menu_1"
               action="party.action_director_window"/>
     <menuitem name="Producers" id="party.menu_producer_list" parent="party.menu_1"
