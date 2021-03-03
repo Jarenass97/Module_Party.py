@@ -7,3 +7,10 @@ access_party_gender,party.gender,model_party_gender,base.group_user,1,1,1,1
 access_party_musical_theme,party.musical_theme,model_party_musical_theme,base.group_user,1,1,1,1
 access_party_author,party.author,model_party_author,base.group_user,1,1,1,1
 access_party_album,party.album,model_party_album,base.group_user,1,1,1,1
+access_party_format,party.format,model_party_format,base.group_user,1,1,1,1
+access_party_record_company,party.record_company,model_party_record_company,base.group_user,1,1,1,1
+access_party_group,party.group,model_party_group,base.group_user,1,1,1,1
+access_party_party,party.party,model_party_party,base.group_user,1,1,1,1
+access_party_place,party.place,model_party_place,base.group_user,1,1,1,1
+access_party_assistant,party.assistant,model_party_assistant,base.group_user,1,1,1,1
+access_party_organizer,party.organizer,model_party_organizer,base.group_user,1,1,1,1

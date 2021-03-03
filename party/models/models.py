@@ -75,6 +75,25 @@ class album(models.Model):
                                       relation='albums_musical_themes',
                                       column1='album_id', column2='musical_theme_id')
 
+class format(models.Model):
+    _name = 'party.format'
+    _description = 'party.format'
+
+    name = fields.Char(string='Format Type')
+
+class record_company(models.Model):
+    _name = 'party.record_company'
+    _description = 'party.record_company'
+
+    name = fields.Char()
+    musical_themes=fields.One2many("party.musical_theme","record_company")
+
+class group(models.Model):
+    _name = 'party.group'
+    _description = 'party.group'
+
+    name = fields.Char()
+    musical_themes=fields.Many2many("party.musical_theme")
 
 class musical_theme(models.Model):
     _name = 'party.musical_theme'
@@ -83,17 +102,48 @@ class musical_theme(models.Model):
     Title = fields.Char()
     Albums=fields.Many2many(comodel_name="party.album", relation='albums_musical_themes',
                                 column1='musical_theme_id', column2='album_id')
-    releaseDate=fields.Integer(String="Release date")
-    Format=fields.Selection([('MP3','MP3'),('MP4','MP4'),('M4P','M4P'),('WAV','WAV')])
+    releaseDate=fields.Integer(string="Release date")
+    Format=fields.Many2many(comodel_name="party.format", relation='formats_musical_themes',
+                                column1='musical_theme_id', column2='format_id')
     Genders = fields.Many2many(comodel_name="party.gender", relation='genders_musical_themes',
                                column1='musical_theme_id', column2='gender_id')
     Duration=fields.Float()
-    record_company=fields.Char()
+    record_company=fields.Many2one("party.record_company")
     Authors=fields.Many2many(comodel_name="party.author", relation='authors_musical_themes',
                                 column1='musical_theme_id', column2='author_id')
     Producers = fields.Many2many(comodel_name="party.producer", relation='producers_musical_themes',
                                  column1='musical_theme_id', column2='producers_id')
-    Group=fields.Char()
+    Group=fields.Many2many("party.group")
+
+class place(models.Model):
+    _name='party.place'
+    _description='party.place'
+
+    name=fields.Char()
+
+class assistant(models.Model):
+    _name='party.assistant'
+    _description='party.assistant'
+
+    name=fields.Char()
+
+class organizer(models.Model):
+    _name='party.organizer'
+    _description='party.organizer'
+
+    name=fields.Char()
+
+class party(models.Model):
+    _name = 'party.party'
+    _description = 'party.party'
+
+    Name = fields.Char()
+    Date = fields.Date()
+    Place = fields.Many2one("party.place")
+    Organizer=fields.Many2one("party.organizer")
+    Assistants=fields.Many2many("party.assistant")
+    Films=fields.Many2many("party.film")
+    musical_themes=fields.Many2many("party.musical_theme",string="Musical themes")
 
 
 
