@@ -54,22 +54,43 @@ class film(models.Model):
     releaseDate= fields.Date(string="Release Date")
     Genders=fields.Many2many(comodel_name="party.gender", relation='genders_films',
                                 column1='film_id', column2='gender_id')
-    Duration=fields.Integer()
+    Duration=fields.Float()
     Language=fields.Selection([('Spanish','Spanish'),('English','English')])
+
+class author(models.Model):
+    _name = 'party.author'
+    _description = 'party.author'
+
+    name = fields.Char()
+    musical_themes=fields.Many2many(string="Musical Themes",comodel_name="party.musical_theme",relation='authors_musical_themes',
+                           column1='author_id',column2='musical_theme_id')
+
+
+class album(models.Model):
+    _name = 'party.album'
+    _description = 'party.album'
+
+    name = fields.Char()
+    musical_themes = fields.Many2many(string="Musical Themes", comodel_name="party.musical_theme",
+                                      relation='albums_musical_themes',
+                                      column1='album_id', column2='musical_theme_id')
+
 
 class musical_theme(models.Model):
     _name = 'party.musical_theme'
     _description = 'party.musical_theme'
 
     Title = fields.Char()
-    Album=fields.Char()
-    releaseDate=fields.Date(String="Release date")
-    Format=fields.Char()
+    Albums=fields.Many2many(comodel_name="party.album", relation='albums_musical_themes',
+                                column1='musical_theme_id', column2='album_id')
+    releaseDate=fields.Integer(String="Release date")
+    Format=fields.Selection([('MP3','MP3'),('MP4','MP4'),('M4P','M4P'),('WAV','WAV')])
     Genders = fields.Many2many(comodel_name="party.gender", relation='genders_musical_themes',
                                column1='musical_theme_id', column2='gender_id')
-    Duration=fields.Integer()
+    Duration=fields.Float()
     record_company=fields.Char()
-    Autors=fields.Char()
+    Authors=fields.Many2many(comodel_name="party.author", relation='authors_musical_themes',
+                                column1='musical_theme_id', column2='author_id')
     Producers = fields.Many2many(comodel_name="party.producer", relation='producers_musical_themes',
                                  column1='musical_theme_id', column2='producers_id')
     Group=fields.Char()

@@ -10,8 +10,7 @@
           <field name="Title"/>
           <field name="Country"/>
           <field name="releaseDate"/>
-          <field name="Duration"/>
-          <field name="Genders"/>
+          <field name="Duration" widget="float_time"/>
           <field name="Language"/>
         </tree>
       </field>
@@ -23,10 +22,9 @@
       <field name="arch" type="xml">
         <tree>
           <field name="Title"/>
-          <field name="Album"/>
           <field name="releaseDate"/>
-          <field name="Format"/>
-          <field name="Duration"/>
+          <field name="Format" widget="radio"/>
+          <field name="Duration" widget="float_time"/>
         </tree>
       </field>
     </record>
@@ -64,6 +62,16 @@
       <field name="res_model">party.gender</field>
       <field name="view_mode">tree,form</field>
     </record>
+    <record model="ir.actions.act_window" id="party.action_author_window">
+      <field name="name">Authors</field>
+      <field name="res_model">party.author</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+ <record model="ir.actions.act_window" id="party.action_album_window">
+      <field name="name">Albums</field>
+      <field name="res_model">party.album</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
 
     <!-- server action to the one above -->
@@ -99,5 +107,9 @@
               action="party.action_screenwriter_window"/>
     <menuitem name="Genders" id="party.menu_gender_list" parent="party.menu_1"
               action="party.action_gender_window"/>
+    <menuitem name="Authors" id="party.menu_author_list" parent="party.menu_1"
+              action="party.action_author_window"/>
+    <menuitem name="Albums" id="party.menu_album_list" parent="party.menu_1"
+              action="party.action_album_window"/>
   </data>
 </odoo>
