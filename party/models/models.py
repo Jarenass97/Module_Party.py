@@ -93,7 +93,7 @@ class group(models.Model):
     _description = 'party.group'
 
     name = fields.Char()
-    musical_themes=fields.Many2many("party.musical_theme")
+    musical_themes=fields.One2many("party.musical_theme","Group")
 
 class musical_theme(models.Model):
     _name = 'party.musical_theme'
@@ -113,7 +113,7 @@ class musical_theme(models.Model):
                                 column1='musical_theme_id', column2='author_id')
     Producers = fields.Many2many(comodel_name="party.producer", relation='producers_musical_themes',
                                  column1='musical_theme_id', column2='producers_id')
-    Group=fields.Many2many("party.group")
+    Group=fields.Many2one("party.group")
 
 class place(models.Model):
     _name='party.place'
