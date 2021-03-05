@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
 import datetime
+import logging
+import re
 
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+
+
+_logger=logging.getLogger(__name__)
 
 class director(models.Model):
     _name = 'party.director'
@@ -126,9 +132,24 @@ class assistant(models.Model):
     _name='party.assistant'
     _description='party.assistant'
 
+    dni=fields.Char(string="DNI",default='99999999X')
     name=fields.Char()
-    Birthday=fields.Date()
+    email=fields.Char()
+    Birthday=fields.Date(default=datetime.date.today())
     Age=fields.Integer(compute='_edad',store=True)
+
+    @api.constrains('email')
+    def _check_email(self):
+        regex=re.compile('\w+@\w+\.[a-z]*\Z',re.I)
+        for assistant in self:
+            if not regex.match(assistant.email):
+                raise ValidationError('El formato de email no es correcto')
+    @api.constrains('dni')
+    def _check_dni(self):
+        regex=re.compile('[0-9]{8}[a-z]\Z',re.I)
+        for assistant in self:
+            if not regex.match(assistant.dni):
+                raise ValidationError('El formato de DNI no es correcto')
 
     @api.depends('Birthday')
     def _edad(self):

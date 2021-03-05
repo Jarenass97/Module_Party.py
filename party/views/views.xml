@@ -16,6 +16,7 @@
             </field>
         </record>
 
+
         <record model="ir.ui.view" id="party.musical_theme_list">
             <field name="name">party.musical_theme list</field>
             <field name="model">party.musical_theme</field>
@@ -135,8 +136,10 @@
             <field name="model">party.assistant</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="dni"/>
                     <field name="name"/>
                     <field name="Age"/>
+                    <field name="email"/>
                 </tree>
             </field>
         </record>
