@@ -2,6 +2,7 @@
     <data>
         <!-- explicit list view definition -->
 
+        <!--films views-->
         <record model="ir.ui.view" id="party.film_list">
             <field name="name">party.film list</field>
             <field name="model">party.film</field>
@@ -15,8 +16,43 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.film_form">
+            <field name="name">party.film form</field>
+            <field name="model">party.film</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="cover" widget="image"/>
+                            </group>
+                            <group>
+                                <separator string="Main Data"/>
+                                <field name="title"/>
+                                <field name="country"/>
+                                <field name="release_Date"/>
+                                <field name="duration"/>
+                                <field name="language"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="genders"/>
+                            </group>
+                            <group>
+                                <notebook>
+                                    <page string="Directors"><field name="director"/></page>
+                                    <page string="Producers"><field name="producers"/></page>
+                                    <page string="Screenwriters"><field name="screenwriters"/></page>
+                                </notebook>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
-
+        <!--Musical themes views-->
         <record model="ir.ui.view" id="party.musical_theme_list">
             <field name="name">party.musical_theme list</field>
             <field name="model">party.musical_theme</field>
@@ -25,11 +61,44 @@
                     <field name="title"/>
                     <field name="release_Date"/>
                     <field name="duration" widget="float_time"/>
-                    <field name="record_company" widget="float_time"/>
+                    <field name="record_company"/>
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.musical_theme_form">
+            <field name="name">party.musical_theme form</field>
+            <field name="model">party.musical_theme</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="cover" widget="image"/>
+                            </group>
+                            <group>
+                                <separator string="Main Data"/>
+                                <field name="title"/>
+                                <field name="release_Date"/>
+                                <field name="duration"/>
+                                <field name="record_company"/>
+                                <field name="is_group"/>
+                                <field name="group" attrs="{'invisible':[('is_group','=',False)],
+                                                            'required':[('is_group','=',True)]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Albums"><field name="albums"/></page>
+                            <page string="Formats"><field name="format"/></page>
+                            <page string="Genders"><field name="genders"/></page>
+                            <page string="Authors"><field name="authors"/></page>
+                            <page string="Producers"><field name="producers"/></page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
+        <!--Party views-->
         <record model="ir.ui.view" id="party.party_list">
             <field name="name">party.party list</field>
             <field name="model">party.party</field>
@@ -41,15 +110,35 @@
                 </tree>
             </field>
         </record>
-        <record model="ir.ui.view" id="party.producer_list">
-            <field name="name">party.producer list</field>
-            <field name="model">party.producer</field>
+        <record model="ir.ui.view" id="party.party_form">
+            <field name="name">party.party form</field>
+            <field name="model">party.party</field>
             <field name="arch" type="xml">
-                <tree>
-                    <field name="name"/>
-                </tree>
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="photo" widget="image"/>
+                            </group>
+                            <group>
+                                <separator string="Main Data"/>
+                                <field name="name"/>
+                                <field name="place"/>
+                                <field name="date"/>
+                                <field name="organizer"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Assistants"><field name="assistants"/></page>
+                            <page string="Films"><field name="films"/></page>
+                            <page string="Musical Themes"><field name="musical_themes"/></page>
+                        </notebook>
+                    </sheet>
+                </form>
             </field>
         </record>
+
+        <!--Director views-->
         <record model="ir.ui.view" id="party.director_list">
             <field name="name">party.director list</field>
             <field name="model">party.director</field>
@@ -59,6 +148,62 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.director_form">
+            <field name="name">party.director form</field>
+            <field name="model">party.director</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="photo" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <separator string="Films"/>
+                            <field name="films"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--Producer views-->
+        <record model="ir.ui.view" id="party.producer_list">
+            <field name="name">party.producer list</field>
+            <field name="model">party.producer</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.producer_form">
+            <field name="name">party.producer form</field>
+            <field name="model">party.producer</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="photo" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Films"><field name="films"/></page>
+                            <page string="Musical Themes"><field name="musical_themes"/></page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Screenwriter views-->
         <record model="ir.ui.view" id="party.screenwriter_list">
             <field name="name">party.screenwriter list</field>
             <field name="model">party.screenwriter</field>
@@ -68,6 +213,28 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.screenwriter_form">
+            <field name="name">party.screenwriter form</field>
+            <field name="model">party.screenwriter</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="photo" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <separator string="Films"/>
+                            <field name="films"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Gender vies-->
         <record model="ir.ui.view" id="party.gender_list">
             <field name="name">party.gender list</field>
             <field name="model">party.gender</field>
@@ -77,6 +244,21 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.gender_form">
+            <field name="name">party.gender form</field>
+            <field name="model">party.gender</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Author vies-->
         <record model="ir.ui.view" id="party.author_list">
             <field name="name">party.author list</field>
             <field name="model">party.author</field>
@@ -86,6 +268,28 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.author_form">
+            <field name="name">party.author form</field>
+            <field name="model">party.author</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="photo" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <separator string="Musical themes"/>
+                            <field name="musical_themes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Album vies-->
         <record model="ir.ui.view" id="party.album_list">
             <field name="name">party.album list</field>
             <field name="model">party.album</field>
@@ -95,6 +299,28 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.album_form">
+            <field name="name">party.album form</field>
+            <field name="model">party.album</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="cover" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <separator string="Musical themes"/>
+                            <field name="musical_themes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Format vies-->
         <record model="ir.ui.view" id="party.format_list">
             <field name="name">party.format list</field>
             <field name="model">party.format</field>
@@ -104,6 +330,21 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.format_form">
+            <field name="name">party.format form</field>
+            <field name="model">party.format</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Record company vies-->
         <record model="ir.ui.view" id="party.record_company_list">
             <field name="name">party.record_company list</field>
             <field name="model">party.record_company</field>
@@ -113,6 +354,28 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.record_company_form">
+            <field name="name">party.record_company form</field>
+            <field name="model">party.record_company</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="logo" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <separator string="Musical themes"/>
+                            <field name="musical_themes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Group views-->
         <record model="ir.ui.view" id="party.group_list">
             <field name="name">party.group list</field>
             <field name="model">party.group</field>
@@ -122,6 +385,28 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.group_form">
+            <field name="name">party.group form</field>
+            <field name="model">party.group</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="photo" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <separator string="Musical themes"/>
+                            <field name="musical_themes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Place views-->
         <record model="ir.ui.view" id="party.place_list">
             <field name="name">party.place list</field>
             <field name="model">party.place</field>
@@ -131,18 +416,58 @@
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.place_form">
+            <field name="name">party.place form</field>
+            <field name="model">party.place</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="photo" widget="image"/>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Assisstant views-->
         <record model="ir.ui.view" id="party.assistant_list">
             <field name="name">party.assistant list</field>
             <field name="model">party.assistant</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree decoration-danger="Age&lt;18">
                     <field name="dni"/>
                     <field name="name"/>
-                    <field name="Age"/>
+                    <field name="Age" avg="Media"/>
                     <field name="email"/>
                 </tree>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.assistant_form">
+            <field name="name">party.assistant form</field>
+            <field name="model">party.assistant</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                            <field name="photo" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="dni"/>
+                                <field name="name"/>
+                                <field name="Birthday"/>
+                                <field name="email"/>
+                                <field name="Age"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Organizer views-->
         <record model="ir.ui.view" id="party.organizer_list">
             <field name="name">party.organizer list</field>
             <field name="model">party.organizer</field>
@@ -150,6 +475,20 @@
                 <tree>
                     <field name="name"/>
                 </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.organizer_form">
+            <field name="name">party.organizer form</field>
+            <field name="model">party.organizer</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="photo" widget="image"/>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
             </field>
         </record>
 
