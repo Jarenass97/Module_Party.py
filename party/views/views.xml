@@ -1,176 +1,286 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
+    <data>
+        <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="party.film_list">
-      <field name="name">party.film list</field>
-      <field name="model">party.film</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="Title"/>
-          <field name="Country"/>
-          <field name="releaseDate"/>
-          <field name="Duration" widget="float_time"/>
-          <field name="Language"/>
-        </tree>
-      </field>
-    </record>
+        <record model="ir.ui.view" id="party.film_list">
+            <field name="name">party.film list</field>
+            <field name="model">party.film</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="title"/>
+                    <field name="country"/>
+                    <field name="release_Date"/>
+                    <field name="duration" widget="float_time"/>
+                    <field name="language"/>
+                </tree>
+            </field>
+        </record>
 
-    <record model="ir.ui.view" id="party.musical_theme_list">
-      <field name="name">party.musical_theme list</field>
-      <field name="model">party.musical_theme</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="Title"/>
-          <field name="releaseDate"/>
-          <field name="Duration" widget="float_time"/>
-        </tree>
-      </field>
-    </record>
+        <record model="ir.ui.view" id="party.musical_theme_list">
+            <field name="name">party.musical_theme list</field>
+            <field name="model">party.musical_theme</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="title"/>
+                    <field name="release_Date"/>
+                    <field name="duration" widget="float_time"/>
+                    <field name="record_company" widget="float_time"/>
+                </tree>
+            </field>
+        </record>
 
-    <record model="ir.ui.view" id="party.party_list">
-      <field name="name">party.party list</field>
-      <field name="model">party.party</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="Name"/>
-          <field name="Date"/>
-          <field name="Place"/>
-        </tree>
-      </field>
-    </record>
+        <record model="ir.ui.view" id="party.party_list">
+            <field name="name">party.party list</field>
+            <field name="model">party.party</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="place"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.producer_list">
+            <field name="name">party.producer list</field>
+            <field name="model">party.producer</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.director_list">
+            <field name="name">party.director list</field>
+            <field name="model">party.director</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.screenwriter_list">
+            <field name="name">party.screenwriter list</field>
+            <field name="model">party.screenwriter</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.gender_list">
+            <field name="name">party.gender list</field>
+            <field name="model">party.gender</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.author_list">
+            <field name="name">party.author list</field>
+            <field name="model">party.author</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.album_list">
+            <field name="name">party.album list</field>
+            <field name="model">party.album</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.format_list">
+            <field name="name">party.format list</field>
+            <field name="model">party.format</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.record_company_list">
+            <field name="name">party.record_company list</field>
+            <field name="model">party.record_company</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.group_list">
+            <field name="name">party.group list</field>
+            <field name="model">party.group</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.place_list">
+            <field name="name">party.place list</field>
+            <field name="model">party.place</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.assistant_list">
+            <field name="name">party.assistant list</field>
+            <field name="model">party.assistant</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="Age"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.organizer_list">
+            <field name="name">party.organizer list</field>
+            <field name="model">party.organizer</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
 
-    <!-- actions opening views on models -->
+        <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="party.action_film_window">
-      <field name="name">Films</field>
-      <field name="res_model">party.film</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_musical_theme_window">
-      <field name="name">Musical themes</field>
-      <field name="res_model">party.musical_theme</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+        <record model="ir.actions.act_window" id="party.action_film_window">
+            <field name="name">Films</field>
+            <field name="res_model">party.film</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_musical_theme_window">
+            <field name="name">Musical themes</field>
+            <field name="res_model">party.musical_theme</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
-    <record model="ir.actions.act_window" id="party.action_director_window">
-      <field name="name">Directors</field>
-      <field name="res_model">party.director</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-     <record model="ir.actions.act_window" id="party.action_producer_window">
-      <field name="name">Producers</field>
-      <field name="res_model">party.producer</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-     <record model="ir.actions.act_window" id="party.action_screenwriter_window">
-      <field name="name">Screenwriters</field>
-      <field name="res_model">party.screenwriter</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_gender_window">
-      <field name="name">Genders</field>
-      <field name="res_model">party.gender</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_author_window">
-      <field name="name">Authors</field>
-      <field name="res_model">party.author</field>
-      <field name="view_mode">tree,form</field>
-    </record>
- <record model="ir.actions.act_window" id="party.action_album_window">
-      <field name="name">Albums</field>
-      <field name="res_model">party.album</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_format_window">
-      <field name="name">Formats</field>
-      <field name="res_model">party.format</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_record_company_window">
-      <field name="name">Record companys</field>
-      <field name="res_model">party.record_company</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_group_window">
-      <field name="name">Groups</field>
-      <field name="res_model">party.group</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_party_window">
-      <field name="name">Partys</field>
-      <field name="res_model">party.party</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_place_window">
-      <field name="name">Places</field>
-      <field name="res_model">party.place</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_assistant_window">
-      <field name="name">Assistants</field>
-      <field name="res_model">party.assistant</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    <record model="ir.actions.act_window" id="party.action_organizer_window">
-      <field name="name">Organizers</field>
-      <field name="res_model">party.organizer</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+        <record model="ir.actions.act_window" id="party.action_director_window">
+            <field name="name">Directors</field>
+            <field name="res_model">party.director</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_producer_window">
+            <field name="name">Producers</field>
+            <field name="res_model">party.producer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_screenwriter_window">
+            <field name="name">Screenwriters</field>
+            <field name="res_model">party.screenwriter</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_gender_window">
+            <field name="name">Genders</field>
+            <field name="res_model">party.gender</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_author_window">
+            <field name="name">Authors</field>
+            <field name="res_model">party.author</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_album_window">
+            <field name="name">Albums</field>
+            <field name="res_model">party.album</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_format_window">
+            <field name="name">Formats</field>
+            <field name="res_model">party.format</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_record_company_window">
+            <field name="name">Record companys</field>
+            <field name="res_model">party.record_company</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_group_window">
+            <field name="name">Groups</field>
+            <field name="res_model">party.group</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_party_window">
+            <field name="name">Partys</field>
+            <field name="res_model">party.party</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_place_window">
+            <field name="name">Places</field>
+            <field name="res_model">party.place</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_assistant_window">
+            <field name="name">Assistants</field>
+            <field name="res_model">party.assistant</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="party.action_organizer_window">
+            <field name="name">Organizers</field>
+            <field name="res_model">party.organizer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="party.action_server">
-      <field name="name">party server</field>
-      <field name="model_id" ref="model_party_party"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+        <!-- server action to the one above -->
+        <!--
+            <record model="ir.actions.server" id="party.action_server">
+              <field name="name">party server</field>
+              <field name="model_id" ref="model_party_party"/>
+              <field name="state">code</field>
+              <field name="code">
+                action = {
+                  "type": "ir.actions.act_window",
+                  "view_mode": "tree,form",
+                  "res_model": model._name,
+                }
+              </field>
+            </record>
+        -->
 
-    <!-- Top menu item -->
-    <menuitem name="Party" id="party.menu_root"/>
-    <!-- menu categories -->
-    <menuitem name="Management" id="party.menu_1" parent="party.menu_root"/>
-    <menuitem name="Items" id="party.menu_item" parent="party.menu_root"/>
-    <!-- actions -->
-    <menuitem name="Films" id="party.menu_film_list" parent="party.menu_1"
-              action="party.action_film_window"/>
-    <menuitem name="Musical themes" id="party.menu_musical_theme_list" parent="party.menu_1"
-              action="party.action_musical_theme_window"/>
-    <menuitem name="Partys" id="party.menu_party_list" parent="party.menu_1"
-              action="party.action_party_window"/>
-    <menuitem name="Directors" id="party.menu_director_list" parent="party.menu_item"
-              action="party.action_director_window"/>
-    <menuitem name="Producers" id="party.menu_producer_list" parent="party.menu_item"
-              action="party.action_producer_window"/>
-    <menuitem name="Screenwriters" id="party.menu_screenwriter_list" parent="party.menu_item"
-              action="party.action_screenwriter_window"/>
-    <menuitem name="Genders" id="party.menu_gender_list" parent="party.menu_item"
-              action="party.action_gender_window"/>
-    <menuitem name="Authors" id="party.menu_author_list" parent="party.menu_item"
-              action="party.action_author_window"/>
-    <menuitem name="Albums" id="party.menu_album_list" parent="party.menu_item"
-              action="party.action_album_window"/>
-    <menuitem name="Formats" id="party.menu_format_list" parent="party.menu_item"
-              action="party.action_format_window"/>
-    <menuitem name="Record Companys" id="party.menu_record_company_list" parent="party.menu_item"
-              action="party.action_record_company_window"/>
-    <menuitem name="Groups" id="party.menu_group_list" parent="party.menu_item"
-              action="party.action_group_window"/>
-    <menuitem name="Places" id="party.menu_place_list" parent="party.menu_item"
-              action="party.action_place_window"/>
-    <menuitem name="Assistants" id="party.menu_assistant_list" parent="party.menu_item"
-              action="party.action_assistant_window"/>
-    <menuitem name="Organizers" id="party.menu_organizer_list" parent="party.menu_item"
-              action="party.action_organizer_window"/>
-  </data>
+        <!-- Top menu item -->
+        <menuitem name="Party" id="party.menu_root"/>
+        <!-- menu categories -->
+        <menuitem name="Management" id="party.menu_1" parent="party.menu_root"/>
+        <menuitem name="Items" id="party.menu_item" parent="party.menu_root"/>
+        <!-- actions -->
+        <menuitem name="Films" id="party.menu_film_list" parent="party.menu_1"
+                  action="party.action_film_window"/>
+        <menuitem name="Musical themes" id="party.menu_musical_theme_list" parent="party.menu_1"
+                  action="party.action_musical_theme_window"/>
+        <menuitem name="Partys" id="party.menu_party_list" parent="party.menu_1"
+                  action="party.action_party_window"/>
+        <menuitem name="Directors" id="party.menu_director_list" parent="party.menu_item"
+                  action="party.action_director_window"/>
+        <menuitem name="Producers" id="party.menu_producer_list" parent="party.menu_item"
+                  action="party.action_producer_window"/>
+        <menuitem name="Screenwriters" id="party.menu_screenwriter_list" parent="party.menu_item"
+                  action="party.action_screenwriter_window"/>
+        <menuitem name="Genders" id="party.menu_gender_list" parent="party.menu_item"
+                  action="party.action_gender_window"/>
+        <menuitem name="Authors" id="party.menu_author_list" parent="party.menu_item"
+                  action="party.action_author_window"/>
+        <menuitem name="Albums" id="party.menu_album_list" parent="party.menu_item"
+                  action="party.action_album_window"/>
+        <menuitem name="Formats" id="party.menu_format_list" parent="party.menu_item"
+                  action="party.action_format_window"/>
+        <menuitem name="Record Companys" id="party.menu_record_company_list" parent="party.menu_item"
+                  action="party.action_record_company_window"/>
+        <menuitem name="Groups" id="party.menu_group_list" parent="party.menu_item"
+                  action="party.action_group_window"/>
+        <menuitem name="Places" id="party.menu_place_list" parent="party.menu_item"
+                  action="party.action_place_window"/>
+        <menuitem name="Assistants" id="party.menu_assistant_list" parent="party.menu_item"
+                  action="party.action_assistant_window"/>
+        <menuitem name="Organizers" id="party.menu_organizer_list" parent="party.menu_item"
+                  action="party.action_organizer_window"/>
+    </data>
 </odoo>

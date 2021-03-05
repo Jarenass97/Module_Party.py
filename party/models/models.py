@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import datetime
 
 from odoo import models, fields, api
 
@@ -43,19 +44,19 @@ class film(models.Model):
     _name = 'party.film'
     _description = 'party.film'
 
-    Title = fields.Char()
+    title = fields.Char()
     director = fields.Many2many(string="Directors",comodel_name="party.director",relation='directors_films',
                                 column1='film_id',column2='director_id')
-    Producers = fields.Many2many(comodel_name="party.producer", relation='producers_films',
+    producers = fields.Many2many(comodel_name="party.producer", relation='producers_films',
                                 column1='film_id', column2='producer_id')
-    Screenwriters=fields.Many2many(comodel_name="party.screenwriter", relation='screenwriter_films',
+    screenwriters=fields.Many2many(comodel_name="party.screenwriter", relation='screenwriter_films',
                                 column1='film_id', column2='screenwriter_id')
-    Country = fields.Selection([('Spain','Spain'),('EE.UU','EE.UU')])
-    releaseDate= fields.Date(string="Release Date")
-    Genders=fields.Many2many(comodel_name="party.gender", relation='genders_films',
+    country = fields.Selection([('Spain','Spain'),('EE.UU','EE.UU')])
+    release_Date= fields.Date(string="Release Date")
+    genders=fields.Many2many(comodel_name="party.gender", relation='genders_films',
                                 column1='film_id', column2='gender_id')
-    Duration=fields.Float()
-    Language=fields.Selection([('Spanish','Spanish'),('English','English')])
+    duration=fields.Float()
+    language=fields.Selection([('Spanish','Spanish'),('English','English')])
 
 class author(models.Model):
     _name = 'party.author'
@@ -93,27 +94,27 @@ class group(models.Model):
     _description = 'party.group'
 
     name = fields.Char()
-    musical_themes=fields.One2many("party.musical_theme","Group")
+    musical_themes=fields.One2many("party.musical_theme","group")
 
 class musical_theme(models.Model):
     _name = 'party.musical_theme'
     _description = 'party.musical_theme'
 
-    Title = fields.Char()
-    Albums=fields.Many2many(comodel_name="party.album", relation='albums_musical_themes',
+    title = fields.Char()
+    albums=fields.Many2many(comodel_name="party.album", relation='albums_musical_themes',
                                 column1='musical_theme_id', column2='album_id')
-    releaseDate=fields.Integer(string="Release date")
-    Format=fields.Many2many(comodel_name="party.format", relation='formats_musical_themes',
+    release_Date=fields.Integer(string="Release date")
+    format=fields.Many2many(comodel_name="party.format", relation='formats_musical_themes',
                                 column1='musical_theme_id', column2='format_id')
-    Genders = fields.Many2many(comodel_name="party.gender", relation='genders_musical_themes',
+    genders = fields.Many2many(comodel_name="party.gender", relation='genders_musical_themes',
                                column1='musical_theme_id', column2='gender_id')
-    Duration=fields.Float()
+    duration=fields.Float()
     record_company=fields.Many2one("party.record_company")
-    Authors=fields.Many2many(comodel_name="party.author", relation='authors_musical_themes',
+    authors=fields.Many2many(comodel_name="party.author", relation='authors_musical_themes',
                                 column1='musical_theme_id', column2='author_id')
-    Producers = fields.Many2many(comodel_name="party.producer", relation='producers_musical_themes',
+    producers = fields.Many2many(comodel_name="party.producer", relation='producers_musical_themes',
                                  column1='musical_theme_id', column2='producers_id')
-    Group=fields.Many2one("party.group")
+    group=fields.Many2one("party.group")
 
 class place(models.Model):
     _name='party.place'
@@ -126,6 +127,15 @@ class assistant(models.Model):
     _description='party.assistant'
 
     name=fields.Char()
+    Birthday=fields.Date()
+    Age=fields.Integer(compute='_edad',store=True)
+
+    @api.depends('Birthday')
+    def _edad(self):
+        for assistant in self:
+            hoy = datetime.datetime.now()
+            fnac=assistant.Birthday
+            assistant.Age = hoy.year - fnac.year - ((hoy.month, hoy.day) < (fnac.month, fnac.day))
 
 class organizer(models.Model):
     _name='party.organizer'
@@ -137,12 +147,12 @@ class party(models.Model):
     _name = 'party.party'
     _description = 'party.party'
 
-    Name = fields.Char()
-    Date = fields.Date()
-    Place = fields.Many2one("party.place")
-    Organizer=fields.Many2one("party.organizer")
-    Assistants=fields.Many2many("party.assistant")
-    Films=fields.Many2many("party.film")
+    name = fields.Char()
+    date = fields.Date(default=datetime.date.today()+datetime.timedelta(days=1))
+    place = fields.Many2one("party.place")
+    organizer=fields.Many2one("party.organizer")
+    assistants=fields.Many2many("party.assistant")
+    films=fields.Many2many("party.film")
     musical_themes=fields.Many2many("party.musical_theme",string="Musical themes")
 
 
