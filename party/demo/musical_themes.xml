@@ -1,0 +1,70 @@
+<odoo>
+  <data>
+    <record id='musical_themeid' model='party.musical_theme'>
+      <field name='title'>title</field>
+      <field name='release_Date'>release_date</field>
+      <field name='duration'>duration</field>
+      <field name='is_group'>is group</field>
+    </record>
+    <record id='musical_theme1' model='party.musical_theme'>
+      <field name='title'>quis orci nullam molestie</field>
+      <field name='release_Date'>2013</field>
+      <field name='duration'>4.66</field>
+      <field name='is_group'>false</field>
+    </record>
+    <record id='musical_theme2' model='party.musical_theme'>
+      <field name='title'>sem mauris</field>
+      <field name='release_Date'>1993</field>
+      <field name='duration'>4.29</field>
+      <field name='is_group'>true</field>
+    </record>
+    <record id='musical_theme3' model='party.musical_theme'>
+      <field name='title'>penatibus et</field>
+      <field name='release_Date'>2000</field>
+      <field name='duration'>3.59</field>
+      <field name='is_group'>true</field>
+    </record>
+    <record id='musical_theme4' model='party.musical_theme'>
+      <field name='title'>id nulla ultrices aliquet</field>
+      <field name='release_Date'>2003</field>
+      <field name='duration'>1.6</field>
+      <field name='is_group'>false</field>
+    </record>
+    <record id='musical_theme5' model='party.musical_theme'>
+      <field name='title'>dui luctus</field>
+      <field name='release_Date'>2000</field>
+      <field name='duration'>5.51</field>
+      <field name='is_group'>true</field>
+    </record>
+    <record id='musical_theme6' model='party.musical_theme'>
+      <field name='title'>diam id ornare</field>
+      <field name='release_Date'>1999</field>
+      <field name='duration'>4.56</field>
+      <field name='is_group'>true</field>
+    </record>
+    <record id='musical_theme7' model='party.musical_theme'>
+      <field name='title'>blandit non</field>
+      <field name='release_Date'>2003</field>
+      <field name='duration'>4.71</field>
+      <field name='is_group'>true</field>
+    </record>
+    <record id='musical_theme8' model='party.musical_theme'>
+      <field name='title'>morbi non lectus</field>
+      <field name='release_Date'>2003</field>
+      <field name='duration'>5.31</field>
+      <field name='is_group'>false</field>
+    </record>
+    <record id='musical_theme9' model='party.musical_theme'>
+      <field name='title'>quisque erat eros viverra</field>
+      <field name='release_Date'>2020</field>
+      <field name='duration'>2.08</field>
+      <field name='is_group'>false</field>
+    </record>
+    <record id='musical_theme10' model='party.musical_theme'>
+      <field name='title'>cubilia curae</field>
+      <field name='release_Date'>2016</field>
+      <field name='duration'>2.92</field>
+      <field name='is_group'>true</field>
+    </record>
+  </data>
+</odoo>

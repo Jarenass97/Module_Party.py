@@ -1,70 +1,71 @@
 <odoo>
-<data>
-<record id='filmid' model='party.film'>
-<field name='title'>title</field>
-<field name='country'>country</field>
-<field name='release_Date'>release_Date</field>
-<field name='language'>language</field>
-</record>
-<record id='film1' model='party.film'>
-<field name='title'>Man's Castle</field>
-<field name='country'>Indonesia</field>
-<field name='release_Date'>3/16/2010</field>
-<field name='language'>Belarusian</field>
-</record>
-<record id='film2' model='party.film'>
-<field name='title'>Nanny McPhee</field>
-<field name='country'>Ukraine</field>
-<field name='release_Date'>11/1/2001</field>
-<field name='language'>Albanian</field>
-</record>
-<record id='film3' model='party.film'>
-<field name='title'>Patty Hearst</field>
-<field name='country'>Comoros</field>
-<field name='release_Date'>11/19/2015</field>
-<field name='language'>Georgian</field>
-</record>
-<record id='film4' model='party.film'>
-<field name='title'>Ten Inch Hero</field>
-<field name='country'>Norway</field>
-<field name='release_Date'>10/13/2019</field>
-<field name='language'>Khmer</field>
-</record>
-<record id='film5' model='party.film'>
-<field name='title'>Frozen Hell (Jäämarssi) </field>
-<field name='country'>Philippines</field>
-<field name='release_Date'>2/6/2001</field>
-<field name='language'>English</field>
-</record>
-<record id='film6' model='party.film'>
-<field name='title'>Die Frau des Frisörs</field>
-<field name='country'>Indonesia</field>
-<field name='release_Date'>6/3/2009</field>
-<field name='language'>Czech</field>
-</record>
-<record id='film7' model='party.film'>
-<field name='title'>Le grand soir</field>
-<field name='country'>Russia</field>
-<field name='release_Date'>5/19/2020</field>
-<field name='language'>Catalan</field>
-</record>
-<record id='film8' model='party.film'>
-<field name='title'>Nymph</field>
-<field name='country'>Maldives</field>
-<field name='release_Date'>6/11/2009</field>
-<field name='language'>Norwegian</field>
-</record>
-<record id='film9' model='party.film'>
-<field name='title'>Stonehearst Asylum</field>
-<field name='country'>Philippines</field>
-<field name='release_Date'>8/3/2003</field>
-<field name='language'>Nepali</field>
-</record>
-<record id='film10' model='party.film'>
-<field name='title'>Out of Reach</field>
-<field name='country'>Mexico</field>
-<field name='release_Date'>5/27/2005</field>
-<field name='language'>Marathi</field>
-</record>
-</data>
+  <data>
+    <record id='filmid' model='party.film'>
+      <field name='title'>title</field>
+      <field name='country'>country</field>
+      <field name='release_Date'>release_Date</field>
+      <field name='language'>language</field>
+    </record>
+    <record id='film1' model='party.film'>
+      <field name='title'>Man's Castle</field>
+      <field name='country'>Indonesia</field>
+      <field name='release_Date'>3/16/2010</field>
+      <field name='language'>Belarusian</field>
+    </record>
+    <record id='film2' model='party.film'>
+      <field name='title'>Nanny McPhee</field>
+      <field name='country'>Ukraine</field>
+      <field name='release_Date'>11/1/2001</field>
+      <field name='language'>Albanian</field>
+    </record>
+    <record id='film3' model='party.film'>
+      <field name='title'>Patty Hearst</field>
+      <field name='country'>Comoros</field>
+      <field name='release_Date'>11/19/2015</field>
+      <field name='language'>Georgian</field>
+    </record>
+    <record id='film4' model='party.film'>
+      <field name='title'>Ten Inch Hero</field>
+      <field name='country'>Norway</field>
+      <field name='release_Date'>10/13/2019</field>
+      <field name='language'>Khmer</field>
+    </record>
+    <record id='film5' model='party.film'>
+      <field name='title'>Frozen Hell (Jäämarssi)
+      </field>
+      <field name='country'>Philippines</field>
+      <field name='release_Date'>2/6/2001</field>
+      <field name='language'>English</field>
+    </record>
+    <record id='film6' model='party.film'>
+      <field name='title'>Die Frau des Frisörs</field>
+      <field name='country'>Indonesia</field>
+      <field name='release_Date'>6/3/2009</field>
+      <field name='language'>Czech</field>
+    </record>
+    <record id='film7' model='party.film'>
+      <field name='title'>Le grand soir</field>
+      <field name='country'>Russia</field>
+      <field name='release_Date'>5/19/2020</field>
+      <field name='language'>Catalan</field>
+    </record>
+    <record id='film8' model='party.film'>
+      <field name='title'>Nymph</field>
+      <field name='country'>Maldives</field>
+      <field name='release_Date'>6/11/2009</field>
+      <field name='language'>Norwegian</field>
+    </record>
+    <record id='film9' model='party.film'>
+      <field name='title'>Stonehearst Asylum</field>
+      <field name='country'>Philippines</field>
+      <field name='release_Date'>8/3/2003</field>
+      <field name='language'>Nepali</field>
+    </record>
+    <record id='film10' model='party.film'>
+      <field name='title'>Out of Reach</field>
+      <field name='country'>Mexico</field>
+      <field name='release_Date'>5/27/2005</field>
+      <field name='language'>Marathi</field>
+    </record>
+  </data>
 </odoo>

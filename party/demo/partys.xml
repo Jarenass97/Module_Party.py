@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <record id='partyid' model='party.party'>
+      <field name='name'>name</field>
+      <field name='place'>place</field>
+      <field name='date'>date</field>
+    </record>
+    <record id='party1' model='party.party'>
+      <field name='name'>Atomoxetine hydrochloride</field>
+      <field name='place'>Makumbako</field>
+      <field name='date'>2/20/2030</field>
+    </record>
+    <record id='party2' model='party.party'>
+      <field name='name'>sodium phosphate</field>
+      <field name='place'>Hesheng</field>
+      <field name='date'>1/23/2028</field>
+    </record>
+    <record id='party3' model='party.party'>
+      <field name='name'>Atenolol</field>
+      <field name='place'>Sandaohezi</field>
+      <field name='date'>12/6/2027</field>
+    </record>
+    <record id='party4' model='party.party'>
+      <field name='name'>Potassium Chloride</field>
+      <field name='place'>Cut-cut Primero</field>
+      <field name='date'>7/29/2028</field>
+    </record>
+    <record id='party5' model='party.party'>
+      <field name='name'>paliperidone</field>
+      <field name='place'>Myhiya</field>
+      <field name='date'>10/18/2027</field>
+    </record>
+    <record id='party6' model='party.party'>
+      <field name='name'>Simethicone</field>
+      <field name='place'>Cuiabá</field>
+      <field name='date'>6/26/2022</field>
+    </record>
+    <record id='party7' model='party.party'>
+      <field name='name'>magnesium hydroxide</field>
+      <field name='place'>Sankeyushu</field>
+      <field name='date'>5/8/2027</field>
+    </record>
+    <record id='party8' model='party.party'>
+      <field name='name'>Chlorpheniramine maleate and Pseudoephedrine hydrochloride and Dextromethorphan hydrobromide</field>
+      <field name='place'>Kalvola</field>
+      <field name='date'>5/14/2022</field>
+    </record>
+    <record id='party9' model='party.party'>
+      <field name='name'>Enalapril Maleate</field>
+      <field name='place'>Ḩawf</field>
+      <field name='date'>3/6/2022</field>
+    </record>
+    <record id='party10' model='party.party'>
+      <field name='name'>"Titanium Dioxide</field>
+      <field name='place'>
+        Zinc Oxide"</field>
+      <field name='date'>Sukamulya</field>
+    </record>
+  </data>
+</odoo>

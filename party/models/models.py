@@ -162,7 +162,7 @@ class assistant(models.Model):
 
     @api.constrains('email')
     def _check_email(self):
-        regex=re.compile('\w+@\w+\.[a-z]*\Z',re.I)
+        regex=re.compile('\w+@\w+\.[a-z]*',re.I)
         for assistant in self:
             if not regex.match(assistant.email):
                 raise ValidationError('El formato de email no es correcto')

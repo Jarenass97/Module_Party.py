@@ -827,7 +827,7 @@
         <record model="ir.actions.act_window" id="party.action_film_window">
             <field name="name">Films</field>
             <field name="res_model">party.film</field>
-            <field name="view_mode">kanban,form,tree</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
         <record model="ir.actions.act_window" id="party.action_musical_theme_window">
             <field name="name">Musical themes</field>
