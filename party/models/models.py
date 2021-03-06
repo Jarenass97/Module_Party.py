@@ -84,9 +84,7 @@ class album(models.Model):
 
     cover = fields.Image(max_width=200, max_height=200)
     name = fields.Char()
-    musical_themes = fields.Many2many(string="Musical Themes", comodel_name="party.musical_theme",
-                                      relation='albums_musical_themes',
-                                      column1='album_id', column2='musical_theme_id')
+    musical_themes = fields.One2many('party.musical_theme','album')
 
 class format(models.Model):
     _name = 'party.format'
@@ -116,8 +114,7 @@ class musical_theme(models.Model):
 
     cover = fields.Image(max_width=200, max_height=200)
     title = fields.Char()
-    albums=fields.Many2many(comodel_name="party.album", relation='albums_musical_themes',
-                                column1='musical_theme_id', column2='album_id')
+    album=fields.Many2one('party.album')
     release_Date=fields.Integer(string="Release date")
     format=fields.Many2many(comodel_name="party.format", relation='formats_musical_themes',
                                 column1='musical_theme_id', column2='format_id')

@@ -9,10 +9,6 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="title"/>
-                    <field name="country"/>
-                    <field name="release_Date"/>
-                    <field name="duration" widget="float_time"/>
-                    <field name="language"/>
                 </tree>
             </field>
         </record>
@@ -51,6 +47,64 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.film_kanban">
+            <field name="name">party.film kanban</field>
+            <field name="model">party.film</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="language" on_create="quick_create"
+                        quick_create_view="party.quick_create_film_form">
+                    <field name="id"/>
+                    <field name="country"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_{{kanban_getcolor(record.country.raw_value)}} oe_kanban_global_click o_kanban_record_has_image_fill">
+                                <a type="open">
+                                    <img width="100" height="125" style="padding:5px" class="oe_kanban_image"
+                                         t-att-src="kanban_image('party.film','cover',record.id.raw_value)"
+                                         alt="film image"/>
+                                </a>
+                                <div t-attf-class="oe_kanban_content">
+                                    <h4>
+                                        <a type="edit">
+                                            <field name="title"/>
+                                        </a>
+                                    </h4>
+                                    <ul>
+                                        <li>Country:
+                                            <field name="country"/>
+                                        </li>
+                                        <li>Release date:
+                                            <field name="release_Date"/>
+                                        </li>
+                                        <li>Duration:
+                                            <field name="duration" widget="float_time"/>
+                                        </li>
+                                        <li>Language:
+                                            <field name="language"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.quick_create_film_form">
+            <field name="name">party.film form quickcreate</field>
+            <field name="model">party.film</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="title"/>
+                        <field name="country"/>
+                        <field name="release_Date"/>
+                        <field name="duration"/>
+                        <field name="language"/>
+                    </group>
+                </form>
+            </field>
+        </record>
 
         <!--Musical themes views-->
         <record model="ir.ui.view" id="party.musical_theme_list">
@@ -84,16 +138,74 @@
                                 <field name="is_group"/>
                                 <field name="group" attrs="{'invisible':[('is_group','=',False)],
                                                             'required':[('is_group','=',True)]}"/>
+                                <field name="album"/>
                             </group>
                         </group>
                         <notebook>
-                            <page string="Albums"><field name="albums"/></page>
                             <page string="Formats"><field name="format"/></page>
                             <page string="Genders"><field name="genders"/></page>
                             <page string="Authors"><field name="authors"/></page>
                             <page string="Producers"><field name="producers"/></page>
                         </notebook>
                     </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.musical_theme_kanban">
+            <field name="name">party.musical_theme kanban</field>
+            <field name="model">party.musical_theme</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="record_company" on_create="quick_create"
+                        quick_create_view="party.quick_create_musical_theme_form">
+                    <field name="id"/>
+                    <field name="album"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_{{kanban_getcolor(record.album.raw_value)}} oe_kanban_global_click o_kanban_record_has_image_fill">
+                                <a type="open">
+                                    <img width="125" height="125" style="padding:5px" class="oe_kanban_image"
+                                         t-att-src="kanban_image('party.musical_theme','cover',record.id.raw_value)"
+                                         alt="musical_theme image"/>
+                                </a>
+                                <div t-attf-class="oe_kanban_content">
+                                    <h4>
+                                        <a type="edit">
+                                            <field name="title"/>
+                                        </a>
+                                    </h4>
+                                    <ul>
+                                        <li>Release date:
+                                            <field name="release_Date"/>
+                                        </li>
+                                        <li>Duration:
+                                            <field name="duration" widget="float_time"/>
+                                        </li>
+                                        <li>Record Company:
+                                            <field name="record_company"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.quick_create_musical_theme_form">
+            <field name="name">party.musical_theme form quickcreate</field>
+            <field name="model">party.musical_theme</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="title"/>
+                        <field name="release_Date"/>
+                        <field name="duration"/>
+                        <field name="record_company"/>
+                        <field name="is_group"/>
+                        <field name="group" attrs="{'invisible':[('is_group','=',False)],
+                                                            'required':[('is_group','=',True)]}"/>
+                        <field name="album"/>
+                    </group>
                 </form>
             </field>
         </record>
@@ -130,10 +242,65 @@
                         </group>
                         <notebook>
                             <page string="Assistants"><field name="assistants"/></page>
-                            <page string="Films"><field name="films"/></page>
+                            <!--<page string="Films"><field name="films"/></page>-->
                             <page string="Musical Themes"><field name="musical_themes"/></page>
                         </notebook>
                     </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.party_kanban">
+            <field name="name">party.party kanban</field>
+            <field name="model">party.party</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="place" on_create="quick_create"
+                        quick_create_view="party.quick_create_party_form">
+                    <field name="id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div style="width:225px">
+                                <div t-attf-class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                                    <a type="open">
+                                        <img width="200" height="125" style="padding:5px" class="oe_kanban_image"
+                                             t-att-src="kanban_image('party.party','photo',record.id.raw_value)"
+                                             alt="party image"/>
+                                    </a>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <h4>
+                                        <a type="edit">
+                                            <field name="name"/>
+                                        </a>
+                                    </h4>
+                                    <ul>
+                                        <li>Place:
+                                            <field name="place"/>
+                                        </li>
+                                        <li>Date:
+                                            <field name="date"/>
+                                        </li>
+                                        <li>Organizer:
+                                            <field name="organizer"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.quick_create_party_form">
+            <field name="name">party.party form quickcreate</field>
+            <field name="model">party.party</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="place"/>
+                        <field name="date"/>
+                        <field name="organizer"/>
+                    </group>
                 </form>
             </field>
         </record>
@@ -289,7 +456,7 @@
             </field>
         </record>
 
-        <!--Album vies-->
+        <!--Album views-->
         <record model="ir.ui.view" id="party.album_list">
             <field name="name">party.album list</field>
             <field name="model">party.album</field>
@@ -320,7 +487,7 @@
             </field>
         </record>
 
-        <!--Format vies-->
+        <!--Format views-->
         <record model="ir.ui.view" id="party.format_list">
             <field name="name">party.format list</field>
             <field name="model">party.format</field>
@@ -344,7 +511,7 @@
             </field>
         </record>
 
-        <!--Record company vies-->
+        <!--Record company views-->
         <record model="ir.ui.view" id="party.record_company_list">
             <field name="name">party.record_company list</field>
             <field name="model">party.record_company</field>
@@ -452,7 +619,7 @@
                     <sheet>
                         <group>
                             <group>
-                            <field name="photo" widget="image"/>
+                                <field name="photo" widget="image"/>
                             </group>
                             <group>
                                 <field name="dni"/>
@@ -497,14 +664,13 @@
         <record model="ir.actions.act_window" id="party.action_film_window">
             <field name="name">Films</field>
             <field name="res_model">party.film</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,form,tree</field>
         </record>
         <record model="ir.actions.act_window" id="party.action_musical_theme_window">
             <field name="name">Musical themes</field>
             <field name="res_model">party.musical_theme</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
-
         <record model="ir.actions.act_window" id="party.action_director_window">
             <field name="name">Directors</field>
             <field name="res_model">party.director</field>
@@ -553,7 +719,7 @@
         <record model="ir.actions.act_window" id="party.action_party_window">
             <field name="name">Partys</field>
             <field name="res_model">party.party</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
         <record model="ir.actions.act_window" id="party.action_place_window">
             <field name="name">Places</field>
