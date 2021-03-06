@@ -271,7 +271,7 @@
                         </group>
                         <notebook>
                             <page string="Assistants"><field name="assistants"/></page>
-                            <!--<page string="Films"><field name="films"/></page>-->
+                            <page string="Films"><field name="films"/></page>
                             <page string="Musical Themes"><field name="musical_themes"/></page>
                         </notebook>
                     </sheet>
@@ -355,7 +355,6 @@
                 </calendar>
             </field>
         </record>
-
 
         <!--Director views-->
         <record model="ir.ui.view" id="party.director_list">
@@ -824,6 +823,11 @@
 
         <!-- actions opening views on models -->
 
+        <record model="ir.actions.act_window" id="party.action_party_window">
+            <field name="name">Partys</field>
+            <field name="res_model">party.party</field>
+            <field name="view_mode">tree,form,kanban,calendar</field>
+        </record>
         <record model="ir.actions.act_window" id="party.action_film_window">
             <field name="name">Films</field>
             <field name="res_model">party.film</field>
@@ -879,11 +883,6 @@
             <field name="res_model">party.group</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <record model="ir.actions.act_window" id="party.action_party_window">
-            <field name="name">Partys</field>
-            <field name="res_model">party.party</field>
-            <field name="view_mode">tree,form,kanban,calendar</field>
-        </record>
         <record model="ir.actions.act_window" id="party.action_place_window">
             <field name="name">Places</field>
             <field name="res_model">party.place</field>
@@ -923,12 +922,12 @@
         <menuitem name="Management" id="party.menu_1" parent="party.menu_root"/>
         <menuitem name="Items" id="party.menu_item" parent="party.menu_root"/>
         <!-- actions -->
+        <menuitem name="Partys" id="party.menu_party_list" parent="party.menu_1"
+                  action="party.action_party_window"/>
         <menuitem name="Films" id="party.menu_film_list" parent="party.menu_1"
                   action="party.action_film_window"/>
         <menuitem name="Musical themes" id="party.menu_musical_theme_list" parent="party.menu_1"
                   action="party.action_musical_theme_window"/>
-        <menuitem name="Partys" id="party.menu_party_list" parent="party.menu_1"
-                  action="party.action_party_window"/>
         <menuitem name="Directors" id="party.menu_director_list" parent="party.menu_item"
                   action="party.action_director_window"/>
         <menuitem name="Producers" id="party.menu_producer_list" parent="party.menu_item"
