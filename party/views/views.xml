@@ -9,6 +9,9 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="title"/>
+                    <field name="country"/>
+                    <field name="release_Date"/>
+                    <field name="duration" widget="float_time"/>
                 </tree>
             </field>
         </record>
@@ -103,6 +106,18 @@
                         <field name="language"/>
                     </group>
                 </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.film_search">
+            <field name="name">party.film search</field>
+            <field name="model">party.film</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="title"/>
+                    <field name="country"/>
+                    <field name="language"/>
+                    <field name="release_Date" string="Min Release Date" filter_domain="[('release_Date','>=',self)]"/>
+                </search>
             </field>
         </record>
 
@@ -209,6 +224,20 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.musical_theme_search">
+            <field name="name">party.musical_theme search</field>
+            <field name="model">party.musical_theme</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="title"/>
+                    <field name="record_company"/>
+                    <field name="group"/>
+                    <field name="album"/>
+                    <field name="release_Date" string="Min year" filter_domain="[('release_Date','>=',self)]"/>
+                    <filter name="group_by_album" string="Group by album" context="{'group_by':'album'}"/>
+                </search>
+            </field>
+        </record>
 
         <!--Party views-->
         <record model="ir.ui.view" id="party.party_list">
@@ -304,6 +333,29 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.party_search">
+            <field name="name">party.party search</field>
+            <field name="model">party.party</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="place"/>
+                    <field name="organizer"/>
+                    <field name="date" string="Min date" filter_domain="[('date','>=',self)]"/>
+                </search>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.party_calendar">
+            <field name="name">party.party calendar</field>
+            <field name="model">party.party</field>
+            <field name="arch" type="xml">
+                <calendar string="Party calendar" date_start="date"
+                          color="place">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
 
         <!--Director views-->
         <record model="ir.ui.view" id="party.director_list">
@@ -333,6 +385,15 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.director_search">
+            <field name="name">party.director search</field>
+            <field name="model">party.director</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
             </field>
         </record>
 
@@ -369,6 +430,15 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.producer_search">
+            <field name="name">party.producer search</field>
+            <field name="model">party.producer</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
 
         <!--Screenwriter views-->
         <record model="ir.ui.view" id="party.screenwriter_list">
@@ -400,6 +470,15 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.screenwriter_search">
+            <field name="name">party.screenwriter search</field>
+            <field name="model">party.screenwriter</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
 
         <!--Gender vies-->
         <record model="ir.ui.view" id="party.gender_list">
@@ -422,6 +501,15 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.gender_search">
+            <field name="name">party.gender search</field>
+            <field name="model">party.gender</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
             </field>
         </record>
 
@@ -455,6 +543,15 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.author_search">
+            <field name="name">party.author search</field>
+            <field name="model">party.author</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
 
         <!--Album views-->
         <record model="ir.ui.view" id="party.album_list">
@@ -486,6 +583,15 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.album_search">
+            <field name="name">party.album search</field>
+            <field name="model">party.album</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
 
         <!--Format views-->
         <record model="ir.ui.view" id="party.format_list">
@@ -508,6 +614,15 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.format_search">
+            <field name="name">party.format search</field>
+            <field name="model">party.format</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
             </field>
         </record>
 
@@ -541,6 +656,15 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.record_company_search">
+            <field name="name">party.record_company search</field>
+            <field name="model">party.record_company</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
 
         <!--Group views-->
         <record model="ir.ui.view" id="party.group_list">
@@ -572,6 +696,15 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.group_search">
+            <field name="name">party.group search</field>
+            <field name="model">party.group</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
 
         <!--Place views-->
         <record model="ir.ui.view" id="party.place_list">
@@ -595,6 +728,15 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.place_search">
+            <field name="name">party.place search</field>
+            <field name="model">party.place</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
             </field>
         </record>
 
@@ -633,6 +775,18 @@
                 </form>
             </field>
         </record>
+        <record model="ir.ui.view" id="party.assistant_search">
+            <field name="name">party.assistant search</field>
+            <field name="model">party.assistant</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dni"/>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <filter name="Adult" string="Adults" domain="[('Age','>=',18)]"/>
+                </search>
+            </field>
+        </record>
 
         <!--Organizer views-->
         <record model="ir.ui.view" id="party.organizer_list">
@@ -656,6 +810,15 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="party.organizer_search">
+            <field name="name">party.organizer search</field>
+            <field name="model">party.organizer</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
             </field>
         </record>
 
@@ -719,7 +882,7 @@
         <record model="ir.actions.act_window" id="party.action_party_window">
             <field name="name">Partys</field>
             <field name="res_model">party.party</field>
-            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_mode">tree,form,kanban,calendar</field>
         </record>
         <record model="ir.actions.act_window" id="party.action_place_window">
             <field name="name">Places</field>
