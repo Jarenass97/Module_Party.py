@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <record id='assistant1' model='party.assistant'>
+            <field name='dni'>48169624M</field>
+            <field name='name'>Gerhard Bursnell</field>
+            <field name='Birthday'>2009-01-02</field>
+            <field name='email'>gbursnell0@dion.ne</field>
+        </record>
+        <record id='assistant2' model='party.assistant'>
+            <field name='dni'>88357282L</field>
+            <field name='name'>Lionello Tarbatt</field>
+            <field name='Birthday'>2005-04-16</field>
+            <field name='email'>ltarbatt1@statcounter.com</field>
+        </record>
+        <record id='assistant3' model='party.assistant'>
+            <field name='dni'>12292045G</field>
+            <field name='name'>Florinda Klees</field>
+            <field name='Birthday'>1999-12-29</field>
+            <field name='email'>fklees2@hc360.com</field>
+        </record>
+        <record id='assistant4' model='party.assistant'>
+            <field name='dni'>52169756E</field>
+            <field name='name'>Sherwood Hunston</field>
+            <field name='Birthday'>1997-11-25</field>
+            <field name='email'>shunston3@vkontakte.ru</field>
+        </record>
+        <record id='assistant5' model='party.assistant'>
+            <field name='dni'>20115637G</field>
+            <field name='name'>Kaspar Points</field>
+            <field name='Birthday'>2002-05-03</field>
+            <field name='email'>kpoints4@edublogs.org</field>
+        </record>
+        <record id='assistant6' model='party.assistant'>
+            <field name='dni'>72020573V</field>
+            <field name='name'>Raeann Arnson</field>
+            <field name='Birthday'>2006-10-22</field>
+            <field name='email'>rarnson5@xinhuanet.com</field>
+        </record>
+        <record id='assistant7' model='party.assistant'>
+            <field name='dni'>62917610A</field>
+            <field name='name'>Evangeline Batte</field>
+            <field name='Birthday'>1992-01-16</field>
+            <field name='email'>ebatte6@parallels.com</field>
+        </record>
+        <record id='assistant8' model='party.assistant'>
+            <field name='dni'>30276763S</field>
+            <field name='name'>Barbey Robrow</field>
+            <field name='Birthday'>2003-11-24</field>
+            <field name='email'>brobrow7@tonline.de</field>
+        </record>
+        <record id='assistant9' model='party.assistant'>
+            <field name='dni'>87025860E</field>
+            <field name='name'>Davin Dodds</field>
+            <field name='Birthday'>2002-11-20</field>
+            <field name='email'>ddodds8@google.it</field>
+        </record>
+        <record id='assistant10' model='party.assistant'>
+            <field name='dni'>73628572T</field>
+            <field name='name'>Robbin Adshed</field>
+            <field name='Birthday'>1995-03-18</field>
+            <field name='email'>radshed9@shutterfly.com</field>
+        </record>
+    </data>
+</odoo>

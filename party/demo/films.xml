@@ -1,71 +1,74 @@
 <odoo>
   <data>
-    <record id='filmid' model='party.film'>
-      <field name='title'>title</field>
-      <field name='country'>country</field>
-      <field name='release_Date'>release_Date</field>
-      <field name='language'>language</field>
-    </record>
     <record id='film1' model='party.film'>
-      <field name='title'>Man's Castle</field>
-      <field name='country'>Indonesia</field>
-      <field name='release_Date'>3/16/2010</field>
-      <field name='language'>Belarusian</field>
+      <field name='title'>Game Over</field>
+      <field name='country'>Albania</field>
+      <field name='release_Date'>2001-11-01</field>
+      <field name='language'>Punjabi</field>
+      <field name='duration'>6.99</field>
     </record>
     <record id='film2' model='party.film'>
-      <field name='title'>Nanny McPhee</field>
-      <field name='country'>Ukraine</field>
-      <field name='release_Date'>11/1/2001</field>
-      <field name='language'>Albanian</field>
+      <field name='title'>My Last Day Without You (Nie mehr ohne Dich)</field>
+      <field name='country'>Germany</field>
+      <field name='release_Date'>2012-02-16</field>
+      <field name='language'>Filipino</field>
+      <field name='duration'>3.07</field>
     </record>
     <record id='film3' model='party.film'>
-      <field name='title'>Patty Hearst</field>
-      <field name='country'>Comoros</field>
-      <field name='release_Date'>11/19/2015</field>
-      <field name='language'>Georgian</field>
+      <field name='title'>Lucky Star</field>
+      <field name='country'>Brazil</field>
+      <field name='release_Date'>2015-10-22</field>
+      <field name='language'>Danish</field>
+      <field name='duration'>5.68</field>
     </record>
     <record id='film4' model='party.film'>
-      <field name='title'>Ten Inch Hero</field>
-      <field name='country'>Norway</field>
-      <field name='release_Date'>10/13/2019</field>
-      <field name='language'>Khmer</field>
+      <field name='title'>"The Hudsucker Proxy"</field>
+      <field name='country'>Chile</field>
+      <field name='release_Date'>2006-10-03</field>
+      <field name='language'>Malagasy</field>
+      <field name='duration'>2.03</field>
     </record>
     <record id='film5' model='party.film'>
-      <field name='title'>Frozen Hell (Jäämarssi)
-      </field>
-      <field name='country'>Philippines</field>
-      <field name='release_Date'>2/6/2001</field>
-      <field name='language'>English</field>
+      <field name='title'>Escaflowne: The Movie (Escaflowne)</field>
+      <field name='country'>Russia</field>
+      <field name='release_Date'>2005-08-29</field>
+      <field name='language'>Malay</field>
+      <field name='duration'>2.7</field>
     </record>
     <record id='film6' model='party.film'>
-      <field name='title'>Die Frau des Frisörs</field>
+      <field name='title'>For Ellen</field>
       <field name='country'>Indonesia</field>
-      <field name='release_Date'>6/3/2009</field>
-      <field name='language'>Czech</field>
+      <field name='release_Date'>2008-10-24</field>
+      <field name='language'>Norwegian</field>
+      <field name='duration'>3.57</field>
     </record>
     <record id='film7' model='party.film'>
-      <field name='title'>Le grand soir</field>
-      <field name='country'>Russia</field>
-      <field name='release_Date'>5/19/2020</field>
-      <field name='language'>Catalan</field>
+      <field name='title'>"The (Ningen no joken III) Human Condition III"</field>
+      <field name='country'>Senegal</field>
+      <field name='release_Date'>2008-05-26</field>
+      <field name='language'>Malayalam</field>
+      <field name='duration'>4.28</field>
     </record>
     <record id='film8' model='party.film'>
-      <field name='title'>Nymph</field>
-      <field name='country'>Maldives</field>
-      <field name='release_Date'>6/11/2009</field>
-      <field name='language'>Norwegian</field>
+      <field name='title'>The Fighting 69th</field>
+      <field name='country'>Guatemala</field>
+      <field name='release_Date'>2001-11-14</field>
+      <field name='language'>Croatian</field>
+      <field name='duration'>4.74</field>
     </record>
     <record id='film9' model='party.film'>
-      <field name='title'>Stonehearst Asylum</field>
-      <field name='country'>Philippines</field>
-      <field name='release_Date'>8/3/2003</field>
-      <field name='language'>Nepali</field>
+      <field name='title'>Last Stop for Paul</field>
+      <field name='country'>China</field>
+      <field name='release_Date'>2003-12-18</field>
+      <field name='language'>Bosnian</field>
+      <field name='duration'>2.78</field>
     </record>
     <record id='film10' model='party.film'>
-      <field name='title'>Out of Reach</field>
-      <field name='country'>Mexico</field>
-      <field name='release_Date'>5/27/2005</field>
-      <field name='language'>Marathi</field>
+      <field name='title'>Confessions of a Driving Instructor</field>
+      <field name='country'>Portugal</field>
+      <field name='release_Date'>2003-03-28</field>
+      <field name='language'>Greek</field>
+      <field name='duration'>4.23</field>
     </record>
   </data>
 </odoo>

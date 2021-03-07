@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id='musical_theme1' model='party.musical_theme'>
+            <field name='title'>quis orci nullam molestie</field>
+            <field name='release_Date'>2013</field>
+            <field name='duration'>4.66</field>
+            <field name='is_group'>false</field>
+        </record>
+    </data>
+</odoo>

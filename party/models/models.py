@@ -162,7 +162,7 @@ class assistant(models.Model):
 
     @api.constrains('email')
     def _check_email(self):
-        regex=re.compile('\w+@\w+\.[a-z]*',re.I)
+        regex=re.compile('\w+@\w+\.[a-z]*\Z',re.I)
         for assistant in self:
             if not regex.match(assistant.email):
                 raise ValidationError('El formato de email no es correcto')
@@ -197,7 +197,7 @@ class party(models.Model):
     photo=fields.Image(max_width=200,max_height=200)
     name = fields.Char(required='1')
     date = fields.Date(default=datetime.date.today()+datetime.timedelta(days=1),required='1')
-    place = fields.Many2one("party.place",required='1')
+    place = fields.Many2one("party.place")
     organizer=fields.Many2one("party.organizer")
     assistants=fields.Many2many("party.assistant")
     films=fields.Many2many("party.film")

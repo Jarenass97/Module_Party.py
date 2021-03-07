@@ -1,11 +1,11 @@
-id,name,place,date
-1,Atomoxetine hydrochloride,Makumbako,2/20/2030
-2,sodium phosphate,Hesheng,1/23/2028
-3,Atenolol,Sandaohezi,12/6/2027
-4,Potassium Chloride,Cut-cut Primero,7/29/2028
-5,paliperidone,Myhiya,10/18/2027
-6,Simethicone,Cuiabá,6/26/2022
-7,magnesium hydroxide,Sankeyushu,5/8/2027
-8,Chlorpheniramine maleate and Pseudoephedrine hydrochloride and Dextromethorphan hydrobromide,Kalvola,5/14/2022
-9,Enalapril Maleate,Ḩawf,3/6/2022
-10,"Titanium Dioxide, Zinc Oxide",Sukamulya,12/17/2026
+id,name,date,num_place
+1,University of Saint Joseph,2029-04-13,3
+2,Academy of Arts George Enescu Iasi,2029-06-23,4
+3,Technological University (Thanlyin),2029-06-21,5
+4,Lyceum of the Philippines University,2024-03-09,1
+5,All India Institute of Medical Sciences,2021-12-07,6
+6,University of Mumbai,2025-03-29,2
+7,University of Pune,2029-05-07,8
+8,Soongsil University,2021-03-21,3
+9,Pohang University of Science and Technology,2027-10-27,1
+10,Universidad Pedagogica Nacional,2023-11-28,2

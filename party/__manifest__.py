@@ -30,9 +30,11 @@
     ],
     # only loaded in demonstration mode
     'demo': [
+        'demo/places.xml',
         'demo/films.xml',
         'demo/musical_themes.xml',
+        'demo/assistants.xml',
         'demo/partys.xml',
-        'demo/assisstants.xml',
+
     ],
 }

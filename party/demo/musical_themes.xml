@@ -1,11 +1,5 @@
 <odoo>
   <data>
-    <record id='musical_themeid' model='party.musical_theme'>
-      <field name='title'>title</field>
-      <field name='release_Date'>release_date</field>
-      <field name='duration'>duration</field>
-      <field name='is_group'>is group</field>
-    </record>
     <record id='musical_theme1' model='party.musical_theme'>
       <field name='title'>quis orci nullam molestie</field>
       <field name='release_Date'>2013</field>

@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id='place1' model='party.place'>
+            <field name='name'>Northeast Forest University</field>
+        </record>
+        <record id='place2' model='party.place'>
+            <field name='name'>King's College</field>
+        </record>
+        <record id='place3' model='party.place'>
+            <field name='name'>Tsurumi University</field>
+        </record>
+        <record id='place4' model='party.place'>
+            <field name='name'>International Burch University</field>
+        </record>
+        <record id='place5' model='party.place'>
+            <field name='name'>University of Electro-Communications</field>
+        </record>
+        <record id='place6' model='party.place'>
+            <field name='name'>Facultés Universitaires Notre-Dame de la Paix</field>
+        </record>
+        <record id='place7' model='party.place'>
+            <field name='name'>Universidad Santo Tomás</field>
+        </record>
+        <record id='place8' model='party.place'>
+            <field name='name'>American University of Tirana</field>
+        </record>
+        <record id='place9' model='party.place'>
+            <field name='name'>Royal Holloway and Bedford New College</field>
+        </record>
+        <record id='place10' model='party.place'>
+            <field name='name'>Universität Hannover</field>
+        </record>
+    </data>
+</odoo>

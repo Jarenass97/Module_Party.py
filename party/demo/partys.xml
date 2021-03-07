@@ -1,60 +1,84 @@
 <odoo>
-  <data>
-    <record id='partyid' model='party.party'>
-      <field name='name'>name</field>
-      <field name='place'>place</field>
-      <field name='date'>date</field>
-    </record>
-    <record id='party1' model='party.party'>
-      <field name='name'>Atomoxetine hydrochloride</field>
-      <field name='place'>Makumbako</field>
-      <field name='date'>2/20/2030</field>
-    </record>
-    <record id='party2' model='party.party'>
-      <field name='name'>sodium phosphate</field>
-      <field name='place'>Hesheng</field>
-      <field name='date'>1/23/2028</field>
-    </record>
-    <record id='party3' model='party.party'>
-      <field name='name'>Atenolol</field>
-      <field name='place'>Sandaohezi</field>
-      <field name='date'>12/6/2027</field>
-    </record>
-    <record id='party4' model='party.party'>
-      <field name='name'>Potassium Chloride</field>
-      <field name='place'>Cut-cut Primero</field>
-      <field name='date'>7/29/2028</field>
-    </record>
-    <record id='party5' model='party.party'>
-      <field name='name'>paliperidone</field>
-      <field name='place'>Myhiya</field>
-      <field name='date'>10/18/2027</field>
-    </record>
-    <record id='party6' model='party.party'>
-      <field name='name'>Simethicone</field>
-      <field name='place'>Cuiabá</field>
-      <field name='date'>6/26/2022</field>
-    </record>
-    <record id='party7' model='party.party'>
-      <field name='name'>magnesium hydroxide</field>
-      <field name='place'>Sankeyushu</field>
-      <field name='date'>5/8/2027</field>
-    </record>
-    <record id='party8' model='party.party'>
-      <field name='name'>Chlorpheniramine maleate and Pseudoephedrine hydrochloride and Dextromethorphan hydrobromide</field>
-      <field name='place'>Kalvola</field>
-      <field name='date'>5/14/2022</field>
-    </record>
-    <record id='party9' model='party.party'>
-      <field name='name'>Enalapril Maleate</field>
-      <field name='place'>Ḩawf</field>
-      <field name='date'>3/6/2022</field>
-    </record>
-    <record id='party10' model='party.party'>
-      <field name='name'>"Titanium Dioxide</field>
-      <field name='place'>
-        Zinc Oxide"</field>
-      <field name='date'>Sukamulya</field>
-    </record>
-  </data>
+    <data>
+        <record id='party1' model='party.party'>
+            <field name='name'>University of Saint Joseph</field>
+            <field name='date'>2029-04-13</field>
+            <field name='place' ref='party.place3'/>
+            <field name='films' eval="[(6,0,[ref('party.film1'),ref('party.film3')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme1'),ref('party.musical_theme3')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant1'),ref('party.assistant3')])]"/>
+        </record>
+        <record id='party2' model='party.party'>
+            <field name='name'>Academy of Arts George Enescu Iasi</field>
+            <field name='date'>2029-06-23</field>
+            <field name='place' ref='party.place4'/>
+            <field name='films' eval="[(6,0,[ref('party.film2'),ref('party.film4')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme2'),ref('party.musical_theme4')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant2'),ref('party.assistant4')])]"/>
+        </record>
+        <record id='party3' model='party.party'>
+            <field name='name'>Technological University (Thanlyin)</field>
+            <field name='date'>2029-06-21</field>
+            <field name='place' ref='party.place5'/>
+            <field name='films' eval="[(6,0,[ref('party.film3'),ref('party.film5')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme3'),ref('party.musical_theme5')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant3'),ref('party.assistant5')])]"/>
+        </record>
+        <record id='party4' model='party.party'>
+            <field name='name'>Lyceum of the Philippines University</field>
+            <field name='date'>2024-03-09</field>
+            <field name='place' ref='party.place1'/>
+            <field name='films' eval="[(6,0,[ref('party.film4'),ref('party.film1')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme4'),ref('party.musical_theme1')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant4'),ref('party.assistant1')])]"/>
+        </record>
+        <record id='party5' model='party.party'>
+            <field name='name'>All India Institute of Medical Sciences</field>
+            <field name='date'>2021-12-07</field>
+            <field name='place' ref='party.place6'/>
+            <field name='films' eval="[(6,0,[ref('party.film5'),ref('party.film6')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme5'),ref('party.musical_theme6')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant5'),ref('party.assistant6')])]"/>
+        </record>
+        <record id='party6' model='party.party'>
+            <field name='name'>University of Mumbai</field>
+            <field name='date'>2025-03-29</field>
+            <field name='place' ref='party.place2'/>
+            <field name='films' eval="[(6,0,[ref('party.film6'),ref('party.film2')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme6'),ref('party.musical_theme2')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant6'),ref('party.assistant2')])]"/>
+        </record>
+        <record id='party7' model='party.party'>
+            <field name='name'>University of Pune</field>
+            <field name='date'>2029-05-07</field>
+            <field name='place' ref='party.place8'/>
+            <field name='films' eval="[(6,0,[ref('party.film7'),ref('party.film8')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme7'),ref('party.musical_theme8')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant7'),ref('party.assistant8')])]"/>
+        </record>
+        <record id='party8' model='party.party'>
+            <field name='name'>Soongsil University</field>
+            <field name='date'>2021-03-21</field>
+            <field name='place' ref='party.place3'/>
+            <field name='films' eval="[(6,0,[ref('party.film8'),ref('party.film3')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme8'),ref('party.musical_theme3')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant8'),ref('party.assistant3')])]"/>
+        </record>
+        <record id='party9' model='party.party'>
+            <field name='name'>Pohang University of Science and Technology</field>
+            <field name='date'>2027-10-27</field>
+            <field name='place' ref='party.place1'/>
+            <field name='films' eval="[(6,0,[ref('party.film9'),ref('party.film1')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme9'),ref('party.musical_theme1')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant9'),ref('party.assistant1')])]"/>
+        </record>
+        <record id='party10' model='party.party'>
+            <field name='name'>Universidad Pedagogica Nacional</field>
+            <field name='date'>2023-11-28</field>
+            <field name='place' ref='party.place2'/>
+            <field name='films' eval="[(6,0,[ref('party.film10'),ref('party.film2')])]"/>
+            <field name='musical_themes' eval="[(6,0,[ref('party.musical_theme10'),ref('party.musical_theme2')])]"/>
+            <field name='assistants' eval="[(6,0,[ref('party.assistant10'),ref('party.assistant2')])]"/>
+        </record>
+    </data>
 </odoo>
